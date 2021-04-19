@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="#" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <!-- FontAwesom CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <!--Sweet Alert 2 -->
+  <link rel="stylesheet" href="sweetalert2/sweetalert2.min.css" />
+  <!--CSS custom -->
+  <link rel="stylesheet" href="css/tablas.css">
+</head>
+<style>
+
+</style>
+
+<body>
+
+
+  <div id="appInventario">
+    <h1>Empleados</h1>
+
+    <div class="row">
+      <div class="col">
+        <button @click="btnAlta" class="btn btn-success" title="Nuevo">
+          <i class="fas fa-plus-circle fa-2x"></i>
+        </button>
+        <a href="principal.php">
+          <button class="btn btn-info" title="Nuevo">
+            <i class="fas fa-home fa-2x"></i>
+          </button>
+        </a>
+        <a href="empleado_baja.php">
+          <button class="btn btn-danger" title="Nuevo">
+            <i class="fas fa-arrow-down fa-2x"></i>
+          </button>
+        </a>
+      </div>
+
+    </div>
+    <br>
+    <div id="tabla">
+      <div class="form-row">
+        <div class="form-group col-md-10">
+          <div class="input-group mb-3">
+
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Buscar</span>
+            </div>
+            <div class="custom-file">
+              <input type="search" class="form-control" style="border:1px solid #ced4da" v-model="buscador"
+              placeholder="Buscar dpi | nombre | telefono">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>DPI</th>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+            <th>Cumpleaños</th>
+            <th>Correo</th>
+            <th>Salario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(cliente,indice) of Busqueda">
+            <td data-th="DPI">{{cliente.dpi}}</td>
+            <td class="texto" data-th="Nombre">{{cliente.nombre}}</td>
+            <td class="texto" data-th="Dirección">{{cliente.direccion}}</td>
+            <td data-th="Teléfono ">{{cliente.telefono}}</td>
+            <td data-th="Cumpleaños">{{cliente.fecha}}</td>
+            <td data-th="Correo">{{cliente.correo}}</td>
+            <td data-th="Salario">Q.{{cliente.salario}}.00</td>
+
+
+            <td data-th="Acciones">
+              <div class="btn-group" role="group">
+                <button class="btn btn-warning" title="Editar"
+                  @click="btnEditar(cliente.id_empleados, cliente.dpi, cliente.nombre, cliente.salario, cliente.telefono, cliente.fecha, cliente.correo, cliente.direccion)">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button class="btn btn-danger" title="Dar de baja" @click="btnBorrar(cliente.id_empleados)">
+                  <i class="fas fa-arrow-down"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+  <br>
+  <!-- jQuery, Popper.js, Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!--Vue.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!--Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+  <!--Sweet Alert 2 -->
+  <script src="sweetalert2/sweetalert2.all.min.js"></script>
+  <!--Código custom -->
+  <script src="modulos\personas\main.js"></script>
+  <script src="modulos\personas\main_activos.js"></script>
+
+</body>
+
+</html>

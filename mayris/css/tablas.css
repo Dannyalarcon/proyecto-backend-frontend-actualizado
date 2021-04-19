@@ -1,0 +1,85 @@
+#tabla {
+  padding: 1px 1px 0px 1px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background: white;
+  border-radius: 8px;
+}
+#fecha{
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+.boto {
+  border-radius: 6px 0px 0px 6px !important;
+}
+.table td,
+.table th {
+  font-size: 15px;
+}
+@media only screen and (max-width: 1060px) {
+  #tabla {
+    padding: 1px 1px 3px 1px;
+
+    background: white;
+    border-radius: 8px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border-bottom: #dee2e6 1px solid;
+    margin: 0 0 1rem 0;
+  }
+  .table td,
+  .table th {
+    height: auto !important;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 40% !important;
+  }
+
+  td:before {
+    font-weight: bold;
+    content: attr(data-th) ": ";
+    position: absolute;
+    text-transform: capitalize;
+    top: 0;
+    left: 20px;
+    padding-right: 10px;
+    white-space: nowrap;
+    line-height: 45px;
+  }
+}
+.texto {
+  text-transform: capitalize;
+}
+.sinbold{
+  font-weight: normal !important;
+}
+.table td,
+table th {
+  vertical-align: text-bottom !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  border-top: none !important;
+}
+.swal2-show {
+  width: 850px !important;
+}
+label {
+  font-weight: bold;
+}

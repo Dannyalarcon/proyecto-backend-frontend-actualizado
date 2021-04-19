@@ -1,0 +1,11 @@
+//Desarrollador: Francis Daniel Velasquez Alarcon
+//Mail: dannyalarcon417@gmail.com
+//Sistema: Mayri's Salon & Nails
+//version: v3.0
+//creado: 1 Septiembre del 2019
+
+para instalar el sistema 
+se debe colocar las dos carpetas (mayris y mayris_api) dentro de la carpeta www de wampserver o htdocs de xamp.
+
+asignar el nombre de la base de datos como salon1 en phpmyadmin e importar la base de datos vacia dentro de los archivos de esta carpeta
+

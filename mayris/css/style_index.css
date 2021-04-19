@@ -1,0 +1,55 @@
+body {
+  /*crea una gradiente de dos colores de color en pantalla completa*/
+  background: linear-gradient(#e1bee7, #ab47bc);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.card-container.card {
+  /*ajusta la tarjeta mas pequeña con el contenedor*/
+  max-width: 350px;
+  padding: 40px 40px;
+  border-radius: 15px;
+}
+.form-control {
+  border-radius: 8.25rem !important;
+}
+.card {
+  /*forma y color del cuerpo del card*/
+  background-color: rgba(255, 255, 255, 0.17) !important;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.3);
+}
+.profile-img-card {
+  /*ajusta la imagen(logo) que esta dentro de la tarjeta*/
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  display: block;
+}
+/*
+   * Form styles
+   */
+.form-signin input {
+  margin-bottom: 10px;
+  color: #000;
+}
+.btn.btn-signin {
+  background-color: #ab47bc;
+  padding: 0px;
+  color: #fff;
+  height: calc(1.5em + 0.75rem + 2px) !important;
+  border-radius: 8.25rem !important;
+  border: none;
+}
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+  background-color: #9d34ff;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  color: #fff;
+}

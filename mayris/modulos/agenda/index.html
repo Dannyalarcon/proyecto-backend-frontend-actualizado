@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="shortcut icon" href="#" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <!-- FontAwesom CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <!--Sweet Alert 2 -->
+  <link rel="stylesheet" href="sweetalert2/sweetalert2.min.css" />
+  <!--CSS custom -->
+  <link rel="stylesheet" href="css/tablas.css">
+</head>
+<style>
+  .anchor {
+    text-decoration: underline;
+    color: #212529;
+  }
+</style>
+
+<body>
+
+
+  <div id="appAgenda">
+    <h1>Agenda</h1>
+
+    <div class="row">
+      <div class="col">
+        <button @click="btnAlta" class="btn btn-success" title="Nuevo">
+          <i class="fas fa-plus-circle fa-2x"></i>
+        </button>
+
+        <a href="principal.php">
+          <button class="btn btn-info" title="Nuevo">
+            <i class="fas fa-home fa-2x"></i>
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <br>
+
+    <div id="tabla">
+      <div class="form-row">
+        <div class="form-group col-md-10">
+          <div class="input-group mb-3">
+
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroupFileAddon01">Buscar</span>
+            </div>
+            <div class="custom-file">
+              <input type="search" class="form-control" style="border:1px solid #ced4da" v-model="buscador"
+                placeholder="Buscar nombre | descripcion | telefono">
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover   ">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Telefono</th>
+            <th id="fecha">Fecha</th>
+            <th>Hora</th>
+            <th>Asistencia</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(agenda,indice) of Busqueda">
+            <td class="texto" data-th="nombre">{{agenda.nombre}}</td>
+            <td data-th="descripcion">{{agenda.descripcion}}</td>
+            <td data-th="precio">Q.{{agenda.precio}}.00</td>
+            <td data-th="telefono"><a class="anchor" :href="'tel:+502'+agenda.telefono">{{agenda.telefono}}</a></td>
+            <td data-th="fecha">{{agenda.fecha}}</td>
+            <td data-th="hora">{{agenda.hora}}</td>
+            <td data-th="asistencia">{{agenda.asistencia}}</td>
+            <td data-th="Acciones">
+              <div class="btn-group" role="group">
+                <a
+                  :href="'https://api.whatsapp.com/send?phone=+502'+agenda.telefono+'&text=Hola '+agenda.nombre+', te saluda Mayris Salon Nails, recuerda que hoy tienes cita de '+agenda.descripcion+', hora: '+agenda.hora">
+                  <button class="boto btn btn-success" title="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                  </button>
+                </a>
+                <button class="btn btn-warning" title="Editar"
+                  @click="btnEditar(agenda.id_agenda, agenda.nombre, agenda.descripcion, agenda.precio, agenda.telefono, agenda.fecha, agenda.hora)">
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button class="btn btn-success" title="Finalizar" @click="btnBorrar(agenda.id_agenda)">
+                  <i class="fas fa-check"></i>
+                </button>
+                <button class="btn btn-danger" title="Cancelar" @click="btnBan(agenda.id_agenda)">
+                  <i class="fas fa-ban"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="app">
+    </div>
+  </div>
+  <!-- jQuery, Popper.js, Bootstrap JS                   </i>
+ -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!--Vue.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!--Axios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"></script>
+  <!--Sweet Alert 2 -->
+  <script src="sweetalert2/sweetalert2.all.min.js"></script>
+  <!--Código custom -->
+  <script src="modulos/agenda/main.js"></script>
+  <script src="modulos/agenda/main_pendiente.js"></script>
+
+</body>
+
+</html>

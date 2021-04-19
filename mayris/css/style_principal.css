@@ -1,0 +1,192 @@
+body {
+  background: linear-gradient(#e1bee7, #ab47bc);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+div {
+  text-align: center;
+}
+h1 {
+  margin: 1px;
+  color: black;
+  font-size: 3em;
+}
+
+a.boton2 {
+  font-family: "Amaranth", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: inline-block;
+  text-decoration: none !important;
+  color: black;
+  padding: 20px 23px;
+  border: 2px solid #232324;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all ease 400ms;
+}
+
+a.boton1,
+a.boton3 {
+  font-family: "Amaranth", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: inline-block;
+  text-decoration: none !important;
+  color: black;
+  padding: 20px 40px;
+  border: 2px solid #232324;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: all ease 400ms;
+}
+a.boton1 span,
+a.boton2 span {
+  display: inline-block;
+  position: absolute;
+  background: #bf35d7;
+  transition: all ease 400ms;
+  z-index: -1;
+}
+
+a.boton3 span {
+  display: inline-block;
+  position: absolute;
+  background: #de4c4c;
+  transition: all ease 400ms;
+  z-index: -1;
+}
+
+a.boton1 span.top,
+a.boton2 span.top,
+a.boton3 span.top {
+  left: 0;
+  top: -50%;
+  right: 0;
+  bottom: 100%;
+  border-radius: 50%;
+}
+
+a.boton1:hover,
+a.boton2:hover,
+a.boton3:hover {
+  color: black;
+  border: 2px solid black;
+}
+
+a.boton1:hover span.top,
+a.boton2:hover span.top,
+a.boton3:hover span.top {
+  top: 0;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.custom-select {
+  border: 1px solid black;
+}
+select {
+  text-align: center;
+}
+
+h1 {
+  margin: 1px;
+  color: black;
+  font-size: 3em;
+  padding-bottom: 15px;
+}
+#formulario {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+}
+.form-control {
+  border: 1px solid black;
+}
+
+#boton {
+  margin-bottom: 15px;
+}
+input {
+  text-align: center;
+}
+
+.breadcrumbs {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  color: black;
+  font-size: 0;
+}
+.breadcrumbs a,
+.breadcrumbs .last-crumb {
+  color: black;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0 20px 0 12px;
+  position: relative;
+}
+.breadcrumbs a:after {
+  /**/
+  border-top: 1px solid #555; /*se crea la linea superior*/
+  border-right: 1px solid #555; /*se crear la linea inferior, se coloca right en vez de button por cuestion de lado ya que lo contrario ira a la izquierdo*/
+  content: ""; /*se crea el espacio de la figura*/
+  display: block;
+  margin: -6px 0 0 0; /*se coloca a unos pixeles arriba*/
+  position: absolute; /*El elemento se coloca en relaci�n con su primer elemento ancestro (no est�tico) posicionado*/
+  width: 10px; /*se da una anchura*/
+  height: 10px; /*se da una altura*/
+  top: 50%; /*su parte superior tendra un 50%*/
+  right: 0; /*siempre estara al lado izquierdo*/
+  -webkit-transform: rotate(
+    45deg
+  ); /*a las dos lineas se rotaran a 45 grados a la derecha*/
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hidden {
+  display: none;
+}
+span {
+  /*parte de la letra que no funcionara*/
+  font-family: "Lobster", cursive; /*tipo de letra*/
+  opacity: 0.7; /*tendra una opacidad de color*/
+}
+.Fields {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  font-family: "Lobster", cursive;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+#fab {
+  font-size: 75px !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ab47bc;
+  border-radius: 2px;
+}
